@@ -62,6 +62,8 @@ export RSENSE_HOME=/home/yeban/opt/rsense-0.3
 export PATH=$PATH:/$HOME/opt/ncbi-blast/bin
 
 export _JAVA_AWT_WM_NONREPARENTING=1
+# Auto jump (https://github.com/sjl/z-zsh)
+. $HOME/.zsh/z.sh
 
 case $TERM in
     xterm|rxvt|rxvt-unicode)
@@ -70,6 +72,7 @@ case $TERM in
             echo -ne '\a'
 
             print -Pn "\e]2;%d\a"
+            z --add "$(pwd -P)"
         }
         preexec () {
             local command=${(V)1//\%\%\%}
