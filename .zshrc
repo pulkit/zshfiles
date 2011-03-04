@@ -19,6 +19,10 @@ zstyle ':completion:*' menu select
 autoload -Uz promptinit
 promptinit
 prompt adam2
+
+autoload -U zsh-mime-setup
+zsh-mime-setup
+
 # End of lines added by compinstall
 
 #PS1="%~$ "
