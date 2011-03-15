@@ -1,14 +1,34 @@
-# Created by newuser for 4.3.10
-# Lines configured by zsh-newuser-install
 fpath=(~/.zsh/Completion $fpath)
+
 HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=5000
-setopt histignoredups histfindnodups sharehistory autocd extendedglob notify
+
+# zsh options; man zshoptions
+setopt sharehistory
+setopt histignoredups
+setopt histfindnodups
+setopt histignorespace
+
+setopt extendedglob
+setopt notify
+setopt correct
+setopt interactivecomments
+setopt multios
+
+setopt autocd
+setopt autopushd
+setopt pushdignoredups
+setopt pushdsilent
+
+setopt autolist
+setopt recexact
+
+unsetopt flowcontrol
 unsetopt beep
+
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+
 zstyle :compinstall filename '/home/yeban/.zshrc'
 
 # intialize zsh's autocompletion
