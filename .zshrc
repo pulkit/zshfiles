@@ -106,11 +106,6 @@ case $TERM in
         ;;
 esac
 
-# ---[ Simple calculator ]---------------------------------------------
-function calc () {
-    awk "BEGIN { print $@ }"
-}
-
 alias rand='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
