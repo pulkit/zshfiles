@@ -43,12 +43,10 @@ prompt adam2
 autoload -U zsh-mime-setup
 zsh-mime-setup
 
-# End of lines added by compinstall
-
 #PS1="%~$ "
-
 #export MOZ_NO_REMOTE=1
 
+### Aliases
 alias df='df -h'
 alias du='du -hs'
 
@@ -72,13 +70,13 @@ alias halt='sudo shutdown -h now'
 alias reboot='sudo reboot'
 
 alias e='gvim --remote-tab-silent'
-s() { find . -iname "*$@*" }
 
 alias sshr="ssh -p $srp $sr"
 
-alias iv="gpicview"
 alias entertain='mplayer "$(find "." -type f -regextype posix-egrep -regex ".*\.(avi|mkv|flv|mpg|mpeg|mp4|wmv|3gp|mov|divx)" | shuf -n1)"'
+alias rand='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
+### Exports
 export PKG_CONFIG_PATH=/home/yeban/opt/lib/pkgconfig/:${PKG_CONFIG_PATH}
 
 export PYTHONSTARTUP=$HOME/.pythonrc
@@ -86,9 +84,8 @@ export RSENSE_HOME=/home/yeban/opt/rsense-0.3
 export PATH=$PATH:/$HOME/opt/ncbi-blast/bin
 
 export _JAVA_AWT_WM_NONREPARENTING=1
-# Auto jump (https://github.com/sjl/z-zsh)
-. $HOME/.zsh/z.sh
 
+s() { find . -iname "*$@*" }
 case $TERM in
     xterm|rxvt|rxvt-unicode)
         precmd() {
@@ -106,6 +103,8 @@ case $TERM in
         ;;
 esac
 
-alias rand='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
-
+# Load RVM; http://rvm.beginrescueend.com/
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
+
+# Auto jump; https://github.com/sjl/z-zsh
+. $HOME/.zsh/z.sh
