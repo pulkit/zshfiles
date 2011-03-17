@@ -103,6 +103,21 @@ case $TERM in
         ;;
 esac
 
+# Set default working directory of tmux to the given directory; use the current
+# working directory if none given.
+#
+# TODO: this does not honour .rvmrc
+tcd(){
+    [[ -n "$1" ]] && dir="$1" || dir="${PWD}"
+    if [[ -d "$dir" ]]; then
+        tmux "set-option" "default-path" "${dir}"
+        return 0
+    else
+        echo "tcd: no such directory: ${dir}"
+        return 1
+    fi
+}
+
 # Load RVM; http://rvm.beginrescueend.com/
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
 
