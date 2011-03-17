@@ -86,22 +86,44 @@ export PATH=$PATH:/$HOME/opt/ncbi-blast/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 s() { find . -iname "*$@*" }
-case $TERM in
-    xterm|rxvt|rxvt-unicode)
-        precmd() {
-            # notify the window manager on some activity
-            echo -ne '\a'
 
+precmd() {
+    # reset LD_PRELOAD that might have been set in preexec()
+    export LD_PRELOAD=''
+
+    # send a visual bell to awesome
+    echo -ne '\a'
+
+    # set cwd in terminals
+    case $TERM in
+        xterm|rxvt|rxvt-unicode|screen)
             print -Pn "\e]2;%d\a"
-            z --add "$(pwd -P)"
-        }
-        preexec () {
-            local command=${(V)1//\%\%\%}
+            ;;
+    esac
+
+    # for autojump
+    z --add "$(pwd -P)"
+}
+
+preexec () {
+    local command=${(V)1//\%\%\%}
+    local first=${command%% *}
+
+    # set terminal's title to the currently executing command
+    case $TERM in
+        xterm|rxvt|rxvt-unicode|screen)
             command=$(print -Pn "%40>...>$command" | tr -d "\n")
             print -Pn "\e]2;$command\a"
-        }
-        ;;
-esac
+            ;;
+    esac
+
+    # automatically use proxychains for git, and ssh
+    case $first in
+        git|ssh)
+            export LD_PRELOAD=libproxychains.so.3
+            ;;
+    esac
+}
 
 # Set default working directory of tmux to the given directory; use the current
 # working directory if none given.
