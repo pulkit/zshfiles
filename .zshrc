@@ -58,10 +58,12 @@ zstyle ':completion:*:manuals' separate-sections true
 autoload -Uz compinit
 compinit
 
+# Initialize prompt
 autoload -Uz promptinit
 promptinit
 prompt adam2
 
+# Make Zsh recognize file type associations
 autoload -U zsh-mime-setup
 zsh-mime-setup
 
