@@ -23,6 +23,7 @@ setopt pushdsilent
 
 setopt autolist
 setopt completeinword
+unsetopt listambiguous
 
 unsetopt flowcontrol
 unsetopt beep
