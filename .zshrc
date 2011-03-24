@@ -22,7 +22,6 @@ setopt pushdignoredups
 setopt pushdsilent
 
 setopt autolist
-setopt recexact
 setopt completeinword
 
 unsetopt flowcontrol
