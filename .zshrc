@@ -68,10 +68,6 @@ autoload -Uz promptinit
 promptinit
 prompt adam2
 
-# Make Zsh recognize file type associations
-autoload -U zsh-mime-setup
-zsh-mime-setup
-
 #PS1="%~$ "
 #export MOZ_NO_REMOTE=1
 
