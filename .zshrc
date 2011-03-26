@@ -190,6 +190,15 @@ rationalise-dot() {
 zle -N rationalise-dot
 bindkey . rationalise-dot
 
+# Start history-incremental-search-backward with whatever has already been typed
+# on the command line.
+history-incremental-search-backward-initial() {
+    zle history-incremental-search-backward $BUFFER
+}
+zle -N history-incremental-search-backward-initial
+bindkey '^R' history-incremental-search-backward-initial
+bindkey -M isearch '^R' history-incremental-search-backward
+
 # Load RVM; http://rvm.beginrescueend.com/
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
 
