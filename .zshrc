@@ -32,6 +32,8 @@ unsetopt flowcontrol
 unsetopt beep
 
 bindkey -e
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
 
 # configure zsh's autocompletion system; man zshcompsys
 zstyle ':completion:*' use-cache on
