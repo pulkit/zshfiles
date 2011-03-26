@@ -116,6 +116,9 @@ export PATH=$PATH:/$HOME/opt/ncbi-blast/bin
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# Auto complete directories in $HOME without the initial ~/
+cdpath=$HOME
+
 s() { find . -iname "*$@*" }
 
 precmd() {
