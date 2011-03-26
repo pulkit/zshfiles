@@ -25,6 +25,9 @@ setopt autolist
 setopt completeinword
 unsetopt listambiguous
 
+setopt listpacked
+setopt listtypes
+
 unsetopt flowcontrol
 unsetopt beep
 
