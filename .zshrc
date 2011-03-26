@@ -97,6 +97,10 @@ alias halt='sudo shutdown -h now'
 alias reboot='sudo reboot'
 
 alias e='gvim --remote-tab-silent'
+alias -g ack='ack-grep'
+
+alias sz='source ~/.zshrc'
+alias ez='e ~/.zshrc'
 
 alias sshr="ssh -p $srp $sr"
 
