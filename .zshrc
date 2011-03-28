@@ -48,6 +48,7 @@ zstyle -e ':completion:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numer
 zstyle ':completion:*:functions' ignored-patterns '_*'
 zstyle ':completion:*' ignore-parents parent pwd
 zstyle ':completion:*' list-suffixes true
+zstyle ':completion:*' expand suffix
 zstyle ':completion:*:kill:*' command 'ps -u$USER'
 
 zstyle ':completion:*' group-name ''
