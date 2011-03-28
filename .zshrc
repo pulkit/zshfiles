@@ -41,7 +41,7 @@ bindkey '^[[Z' reverse-menu-complete
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*' completer _expand _complete _match _approximate
 zstyle ':completion:*' matcher-list '+' '+m:{[:lower:]}={[:upper:]}' '+r:|[._-]=** r:|=**' '+l:|=* r:|=*'
 zstyle ':completion:*:match:*' original only
 zstyle -e ':completion:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
@@ -51,6 +51,7 @@ zstyle ':completion:*' list-suffixes true
 zstyle ':completion:*' expand suffix
 zstyle ':completion:*:kill:*' command 'ps -u$USER'
 
+zstyle ':completion::expand:*' tag-order 'expansions all-expansions'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' format '%B%d:%b'
 zstyle ':completion:*' verbose true
