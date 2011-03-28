@@ -23,7 +23,6 @@ setopt pushdignoredups
 setopt pushdsilent
 
 setopt autolist
-setopt completeinword
 unsetopt listambiguous
 
 setopt listpacked
