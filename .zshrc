@@ -34,6 +34,7 @@ unsetopt beep
 bindkey -e
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
+bindkey '^[[Z' reverse-menu-complete
 
 # configure zsh's autocompletion system; man zshcompsys
 zstyle ':completion:*' use-cache on
