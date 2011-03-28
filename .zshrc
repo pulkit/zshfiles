@@ -7,6 +7,7 @@ SAVEHIST=5000
 # zsh options; man zshoptions
 setopt sharehistory
 setopt histignoredups
+setopt histignorealldups
 setopt histfindnodups
 setopt histignorespace
 
