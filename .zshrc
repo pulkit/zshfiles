@@ -155,9 +155,9 @@ preexec () {
             ;;
     esac
 
-    # automatically use proxychains for git, and ssh
+    # automatically use proxychains for git, bzr, and ssh
     case $first in
-        git|ssh)
+        git|bzr|ssh)
             export LD_PRELOAD=libproxychains.so.3
             ;;
     esac
