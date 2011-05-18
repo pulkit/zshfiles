@@ -167,7 +167,7 @@ preexec () {
 # working directory if none given.
 #
 # TODO: this does not honour .rvmrc
-tcd(){
+cdt(){
     [[ -n "$1" ]] && dir="$1" || dir="${PWD}"
     if [[ -d "$dir" ]]; then
         tmux "set-option" "default-path" "${dir}"
