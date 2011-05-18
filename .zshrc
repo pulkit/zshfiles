@@ -203,3 +203,6 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
 
 # Auto jump; https://github.com/sjl/z-zsh
 . $HOME/.zsh/z.sh
+
+# Rooter; https://github.com/yeban/rooter.sh
+. $HOME/.zsh/rooter/rooter.sh

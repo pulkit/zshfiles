@@ -1,0 +1,3 @@
+[submodule "rooter.sh"]
+	path = rooter.sh
+	url = git@github.com:yeban/rooter.sh.git
