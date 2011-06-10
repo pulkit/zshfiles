@@ -102,6 +102,8 @@ alias reboot='sudo reboot'
 
 alias e='gvim --remote-tab-silent'
 
+alias vlc-cli='vlc -I ncurses --browse=/media/sda5'
+
 alias -g ack='ack-grep'
 alias -g G='| grep'
 alias -g L='| less'
@@ -158,7 +160,7 @@ preexec () {
     # automatically use proxychains for git, bzr, and ssh
     case $first in
         git|bzr|ssh)
-            export LD_PRELOAD=libproxychains.so.3
+            #export LD_PRELOAD=libproxychains.so.3
             ;;
     esac
 }
