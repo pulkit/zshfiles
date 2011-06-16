@@ -208,3 +208,6 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
 
 # Rooter; https://github.com/yeban/rooter.sh
 . $HOME/.zsh/rooter/rooter.sh
+
+LD_PRELOAD=/usr/libi386-linux-gnu/libutil.so
+export LD_PRELOAD
