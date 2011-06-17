@@ -104,6 +104,8 @@ alias e='gvim --remote-tab-silent'
 
 alias vlc-cli='vlc -I ncurses --browse=/media/sda5'
 
+alias clr='clear'
+
 alias -g ack='ack-grep'
 alias -g G='| grep'
 alias -g L='| less'
