@@ -1,5 +1,5 @@
 [submodule "rooter.sh"]
-	path = rooter.sh
+	path = rooter
 	url = https://github.com/yeban/rooter.sh.git
 [submodule "z"]
 	path = z
