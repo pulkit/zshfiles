@@ -103,9 +103,8 @@ alias reboot='sudo reboot'
 alias e='gvim --remote-tab-silent'
 
 alias vlc-cli='vlc -I ncurses --browse=/media/sda5'
-
 alias clr='clear'
-
+alias aws-shell='ssh pankaj@175.41.142.187'
 alias -g ack='ack-grep'
 alias -g G='| grep'
 alias -g L='| less'
