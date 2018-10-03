@@ -4,6 +4,7 @@ HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=5000
 
+setopt hello
 # zsh options; man zshoptions
 setopt sharehistory
 setopt histignoredups
